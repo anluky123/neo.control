@@ -1,0 +1,82 @@
+log:
+  level: INFO
+  filePath: "/elopub/media/tr_logs/api.log"
+
+accessLog:
+  filePath: "/elopub/media/tr_logs/access.log"
+
+entryPoints:
+  web:
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: web-secure
+
+  web-secure:
+    address: ":443"
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: "susan.goodman.199@mail.ru"
+      storage: /etc/traefik/acme/acme.json
+      httpChallenge:
+        entryPoint: web
+
+http:
+  routers:
+    web-secure-router:
+      rule: "Host(`neoconntrol.com`) || Host(`www.neoconntrol.com`)"
+      entryPoints:
+        - web-secure
+      middlewares:
+        - csrf
+      service: django
+      priority: 1
+      tls:
+        certResolver: letsencrypt
+
+    media-router:
+      rule: "Host(`neoconntrol.com`) && PathPrefix(`/media`)"
+      entryPoints:
+        - web-secure
+      service: nginx_media
+      priority: 3
+      tls:
+        certResolver: letsencrypt
+
+    static-router:
+      rule: "Host(`neoconntrol.com`) && PathPrefix(`/static`)"
+      entryPoints:
+        - web-secure
+      service: nginx_media
+      priority: 3
+      tls:
+        certResolver: letsencrypt
+
+  middlewares:
+    csrf:
+      headers:
+        hostsProxyHeaders: ["X-CSRFToken"]
+
+  services:
+    django:
+      loadBalancer:
+        servers:
+          - url: http://django:5000
+
+    nginx_media:
+      loadBalancer:
+        servers:
+          - url: http://nginx-media
+
+    static_media:
+      loadBalancer:
+        servers:
+          - url: http://static-media
+
+providers:
+  file:
+    filename: /etc/traefik/traefik.yml
+    watch: true

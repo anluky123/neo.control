@@ -1,0 +1,9 @@
+
+DJANGO_ADMIN_URL=admin/
+
+MY_HOST=neoconntrol.com
+CSRF_TRUSTED_ORIGINS=https://neoconntrol.com
+
+WEB_CONCURRENCY=4
+
+REDIS_URL=redis://redis:6379/0

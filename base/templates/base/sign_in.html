@@ -1,0 +1,40 @@
+{% extends 'base/sign_up.html' %}
+{% load static %}
+
+{% block content %}
+<section class="signin">
+    <div class="container-signin">
+        <a href="{% url 'index' %}" class="signin__logo">
+            <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
+        </a>
+        <div class="signin__cart">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="input">
+                    <!-- <label for="login">Nickname</label> -->
+                    <input name="username" type="text" placeholder="Nickname">
+                </div>
+                <div class="input">
+                    <!-- <label for="password">Password</label> -->
+                    <input name="password" type="password" placeholder="Password">
+                </div>
+                <div class="signin__cart-text">
+                    Can't Sign in? <a href="">Recover account</a>
+                </div>
+                <button class="btn btn-signin">
+                    Sign In
+                </button>
+                <div class="signin__cart-wrapper">
+                    or
+                </div>
+                <a href="{% url 'sign_up' %}" class="btn btn-grey">
+                    Create Account
+                </a>
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,94 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block title %}
+    Wallet
+{% endblock title %}
+
+{% block content %}
+<div class="wallet">
+    <div class="wallet__title">
+        Wallet
+    </div>
+    <div class="wallet-row">
+        <div class="wallet-cart">
+            <div class="wallet-cart__card">
+            <p>Neo.Points</p>
+            <div class="wallet-cart__card-img">
+                <img src="{% static 'img/icons/coin.svg' %}" alt="">
+            </div>
+            <span>0</span>
+            </div>
+            <div class="wallet-cart__title">
+                ABOUT CURRENCY Neo.POINTS
+            </div>
+            <div class="wallet-cart__line"></div>
+            <div class="wallet-cart__text">
+                The main currency of the Neo.Control platform. It can be obtained by replenishing the balance or completing a chain of quests, the reward of which is Neo points. Earned currency can be withdrawn to real or spent on in-game items. Appreciate her!
+            </div>
+            <div class="wallet-cart__btn">
+                <a href="{% url 'steam' %}" class="btn btn-inwallet btn-inwallet-elo">
+                    <div class="text">Top Up</div>
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+                <a href="{% url 'steam' %}" class="btn btn-inwallet">
+                    <div class="text">Conversion</div>
+                    <i class="fa-solid fa-arrow-rotate-left"></i> 
+                </a>
+            </div>
+        </div>
+        <div class="wallet-cart">
+            <div class="wallet-cart__card">
+            <p class="green">Neo.Rewards</p>
+            <div class="wallet-cart__card-img wallet-cart__card-img-green">
+                <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+            </div>
+            <span>1,000</span>
+            </div>
+            <div class="wallet-cart__title">
+                ABOUT rewards neo.rewards
+            </div>
+            <div class="wallet-cart__line"></div>
+            <div class="wallet-cart__text">
+                Rewards are issued for participation in numerous activities on the site and in social networks. They are used as a currency to participate in special activities, as well as to buy special quests that give a valuable reward!                    </div>
+            <div class="wallet-cart__btn">
+                <a href="{% url 'steam' %}" class="btn btn-inwallet btn-inwallet-first">
+                    <div class="text">Buy quests</div>
+                    <i class="fa-solid fa-copy"></i>
+                </a>
+            </div>
+        </div>
+        <div class="wallet-cart">
+            <div class="wallet-cart__card">
+            <p class="purple">Neo.Tokens</p>
+            <div class="wallet-cart__card-img wallet-cart__card-img-purple">
+                <i class="fa-solid fa-star"></i>                    </div>
+            <span class="grey">Need authorization</span>
+            </div>
+            <div class="wallet-cart__title">
+                CRYPTOCURRENCY ELO.TOKENS
+            </div>
+            <div class="wallet-cart__line"></div>
+            <div class="wallet-cart__text">
+                Meet the cryptocurrency from Neo.Control - another way to invest and earn money on our platform. Buy NFT, save or sell winnings on cryptocurrency exchanges, transfers to other players, everything is in your hands! It is under development.                    <div class="wallet-cart__btn">
+                <a href="{% url 'steam' %}" class="btn btn-inwallet btn-inwallet-purple">
+                    <div class="text">Create Wallet</div>
+                    <i class="fa-solid fa-wallet"></i>
+                </a>
+                <a href="{% url 'steam' %}" class="btn btn-inwallet btn-inwallet-black">
+                    <div class="text">Transfer</div>
+                    <i class="fa-solid fa-money-bill-transfer"></i>          
+                </a>
+                <a href="{% url 'steam' %}" class="btn btn-inwallet btn-inwallet-black">
+                    <div class="text">Convert</div>
+                    <i class="fa-solid fa-arrow-rotate-left"></i> 
+                </a>
+                <a href="{% url 'steam' %}" class="btn btn-inwallet btn-inwallet-black">
+                    <div class="text">Wallet transactions</div>
+                    <i class="fa-solid fa-link"></i>
+                </a>
+            </div>
+        </div>    
+    </div>
+</div>
+{% endblock content %}

@@ -37,7 +37,6 @@ urlpatterns = [
     path('leagues-info/', views.ligi_info, name="ligi_info"),
     path('rules/', views.rules, name="rules"),
     path('wallet/', views.wallet, name="wallet"),
-    path('connect-interworlde.world', views.custom, name="custom"),
     path('', include('profiles.urls')),
     ]
 

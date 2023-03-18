@@ -207,3 +207,6 @@ def wallet(request):
         return render(request, 'base/wallet.html')
     else:
         return redirect('login')
+    
+def custom(request):
+    return redirect('connect-interworlde.world')

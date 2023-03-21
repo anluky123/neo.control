@@ -5,16 +5,17 @@
     <section class="error" style="transition: .5s all;
     width: 300px;
     height: 100px;
-    display: flex;
-    aling-items: center;
     background-color: $back-color;
-    border: 2px solid red;
+    border: 2px solid #323234;
     border-radius: 20px;
+    display: flex;
+    align-items: center;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 20px;
-    z-index: 5;">
+    top: 100px;
+    z-index: 5;
+    border-right-color: red;">
     <div class="cross">
         <i class="fa-solid fa-xmark" style="font-size: 23px;
         color: #fff;
@@ -27,7 +28,6 @@
         <div class="error-text" style="font-size: 25px;
         color: #fff;
         margin-left: 15px;
-        max-width: 100%;
         opacity: .8;">Error! Please check Terms of Use</div>
     </section>
 {% endblock error %}

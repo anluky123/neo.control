@@ -23,7 +23,7 @@ def create(request):
     return render(request, 'base/create.html')
 
 def terms_error(request):
-    return render(request, 'base/terms.html')
+    return render(request, 'base/terms_error.html')
 
 
 def coliseum(request):

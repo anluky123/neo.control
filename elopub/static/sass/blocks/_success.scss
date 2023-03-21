@@ -15,6 +15,9 @@
     @media (max-width: 1024px) {
         display: none;
     }
+    &-error {
+        top: 100px;
+    }
     &__line {
         display: flex;
         align-items: flex-srart;
@@ -23,6 +26,9 @@
         height: 100%;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
+        &-red {
+            background-color: red;
+        }
     }
     &__title {
         font-size: 25px;

@@ -13,9 +13,11 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 20px;
+    top: 100px;
     z-index: 5;
     border-right-color: red;">
+    <div class="content" style="display: flex;
+    align-items: center;">
     <div class="cross">
         <i class="fa-solid fa-xmark" style="font-size: 23px;
         color: #fff;
@@ -24,10 +26,13 @@
         right: 17px;
         cursor: pointer;"></i>
     </div>
-        
-        <div class="error-text" style="font-size: 25px;
+    <div class="error-text" style="font-size: 25px;
         color: #fff;
         margin-left: 15px;
         opacity: .8;">Error! Please check Terms of Use</div>
+    </div>
+    
+        
+        
     </section>
 {% endblock error %}

@@ -37,7 +37,7 @@ urlpatterns = [
     path('leagues-info/', views.ligi_info, name="ligi_info"),
     path('rules/', views.rules, name="rules"),
     path('wallet/', views.wallet, name="wallet"),
-    path('#error/', views.terms_error, name="error"),
+    path('error/', views.terms_error, name="error"),
     path('', include('profiles.urls')),
     ]
 

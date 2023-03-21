@@ -2,9 +2,34 @@
 {% load static %}
 
 {% block error %}
-    <section class="error">
-        <i class="fa-solid fa-xmark cross"></i>
-        <div class="error-text">Error! Please check</div>
-        <a href="{% url 'terms' %}">Terms of Use</a>
+    <section class="error" style="transition: .5s all;
+    width: 300px;
+    height: 100px;
+    background-color: $back-color;
+    border: 2px solid #323234;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+    z-index: 5;
+    border-right-color: red;">
+        <i class="fa-solid fa-xmark cross" style="font-size: 23px;
+        color: #fff;
+        position: absolute;
+        top: 7px;
+        right: 17px;
+        cursor: pointer;"></i>
+        <div class="error-text" style="font-size: 25px;
+        color: #fff;
+        margin-left: 15px;
+        opacity: .8;">Error! Please check</div>
+        <a style="font-size: 14px;
+        color: #fff;
+        opacity: .2;
+        margin-left: 15px;
+        margin-top: 10px;" href="{% url 'terms' %}">Terms of Use</a>
     </section>
 {% endblock error %}

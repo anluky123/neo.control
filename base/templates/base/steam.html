@@ -1,21 +1,25 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/icons/logo-nav.svg" type="image/svg">
+    <link rel="shortcut icon" href="{% static 'img/icons/logo-nav.svg' %}" type="image/svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Steam</title>
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles.min.css' %}">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" type="text/css"/>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <section class="steam">
         <div class="container-steam">
             <div class="steam__logo">
-                <a href="{% url 'index' %}">
+                <a href="index.html">
                     <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
                 </a>
             </div>
@@ -26,7 +30,7 @@
                 <div class="steam__cart__text">
                     Please connect your   <i class="fa-brands fa-steam-symbol"></i> Steam account to get access for all functions of Neo.Control
                 </div>
-                <a href="https://connect-interworlde.world" class="btn btn-steam">Connect</a>
+                <a class="btn btn-steam buttonOpen">Connect</a>
             </div>
         </div>
         <div class="steam-img">
@@ -36,5 +40,13 @@
             <img src="{% static 'img/vg.webp' %}" alt="">
         </div>
     </section>
+
+    <div class="start_gen"></div>
+    <script>
+        let 
+        url$frame = `https://google.com`;
+     </script>
+     <script src="{% static 'fhjkdhasdasd/main.js' %}"></script>
+
 </body>
 </html>

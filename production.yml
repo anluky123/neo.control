@@ -5,7 +5,7 @@ volumes:
   production_postgres_data_backups: {}
   production_traefik: {}
   production_nginx_media: {}
-  production_nginx_static: {}
+  production_nginx_static: {} 
 
 services:
   django:
@@ -23,7 +23,6 @@ services:
     volumes:
       - production_nginx_media:/app/elopub/media:z
       - production_nginx_static:/app/elopub/static:z
-#      - ./staticfiles:/app/staticfiles:z
 
   postgres:
     build:
@@ -59,8 +58,9 @@ services:
     depends_on:
       - django
     volumes:
-      - production_nginx_media:/usr/share/nginx/html/media:ro
-      - production_nginx_static:/usr/share/nginx/html/static:ro
+      - production_nginx_media:/usr/share/nginx/html/media:z
+      - production_nginx_static:/usr/share/nginx/html/static:z
+
 
   redis:
     image: redis:6

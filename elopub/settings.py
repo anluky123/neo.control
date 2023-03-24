@@ -21,7 +21,7 @@ ALLOWED_HOSTS = [f'.{MY_HOST}']
 
 SECRET_KEY = 'django-insecure-9hik@u0sjllol^igt9$6v799i&iet-(2vcaxku8-&(a@56zs$i'
 
-DEBUG = True
+DEBUG = False
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -114,7 +114,7 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [str(APPS_DIR / "static")]
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
-    # "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
 ADMINS = [("""susan""", "susan.goodman.199@mail.ru")]

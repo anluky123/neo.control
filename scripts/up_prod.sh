@@ -1,3 +1,3 @@
 #!/bin/bash
-docker-compose -f production.yml up --build -d --scale celeryworker=15
-#--scale celeryworker=5
+docker-compose -f production.yml up --build -d && docker cp ./elopub/static/ $(docker-compose -f production.yml ps -q django):/app/elopub/
+

@@ -32,8 +32,6 @@ ENV PYTHONDONTWRITEBYTECODE 1
 WORKDIR ${APP_HOME}
 
 
-RUN addgroup --system django \
-    && adduser --system --ingroup django django
 
 # Install required system dependencies
 RUN apt-get update && apt-get install --no-install-recommends -y \
@@ -50,24 +48,20 @@ COPY --from=python-build-stage /usr/src/app/wheels  /wheels/
 RUN pip install --no-cache-dir --no-index --find-links=/wheels/ /wheels/* \
   && rm -rf /wheels/
 
-COPY --chown=django:django ./compose/production/django/entrypoint /entrypoint
+COPY  ./compose/production/django/entrypoint /entrypoint
 RUN sed -i 's/\r$//g' /entrypoint
 RUN chmod +x /entrypoint
 
 
-COPY --chown=django:django ./compose/production/django/start /start
+COPY  ./compose/production/django/start /start
 RUN sed -i 's/\r$//g' /start
 RUN chmod +x /start
 
 
 # copy application code to WORKDIR
-COPY --chown=django:django . ${APP_HOME}
-
-RUN chown django:django ${APP_HOME}
+COPY . ${APP_HOME}
 
 
-RUN chmod +x manage.py
 
-USER django
 
 ENTRYPOINT ["/entrypoint"]

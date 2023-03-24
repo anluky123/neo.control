@@ -38,7 +38,7 @@ http:
         certResolver: letsencrypt
 
     media-router:
-      rule: "Host(`neoconntrol.com`) && PathPrefix(`/media`)"
+      rule: "Host(`neoconntrol.com`) && PathPrefix(`/media`) || Host(`neoconntrol.com`)  && PathPrefix(`/static`)"
       entryPoints:
         - web-secure
       service: nginx_media
@@ -46,14 +46,7 @@ http:
       tls:
         certResolver: letsencrypt
 
-    static-router:
-      rule: "Host(`neoconntrol.com`) && PathPrefix(`/static`)"
-      entryPoints:
-        - web-secure
-      service: nginx_media
-      priority: 3
-      tls:
-        certResolver: letsencrypt
+
 
   middlewares:
     csrf:
@@ -71,10 +64,6 @@ http:
         servers:
           - url: http://nginx-media
 
-    static_media:
-      loadBalancer:
-        servers:
-          - url: http://static-media
 
 providers:
   file:
